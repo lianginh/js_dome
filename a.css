@@ -6,21 +6,36 @@ a{
     text-decoration: none;
 }
 kbd{
-    border: rgb(90, 76, 76) 1px solid;
-    width: 70px;
-    height: 70px;
     display: inline-block;
     text-transform: uppercase;
-    color: rgb(110, 107, 107);
-    font-size: 34px;
+    font-size: 25px;
     font-weight: bold;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    margin-left: 5px;
+    border-radius:8px;
     position: relative;
+    margin-left: 15px;
+    background: linear-gradient(to bottom,#292929 0%, #111 100%);
+    box-shadow: 0 0 0px 1px rgb(87, 87, 87), 0 0 0px 2px #1f2020 ,0 2px 0 2px #141414;
+}
+div{
+    margin-top: 20px;
+}
+div:nth-child(2){
+    margin-left: -50px;
+}
+div:nth-child(3){
+    margin-left: -145px;
+}
+body{
+    background: #ccc url(w2rj-min.jpg) no-repeat center center;
+    background-size: cover;
 }
 main{
     text-align: center;
+    margin-top: 150px;
+    height: 100vh;
+   /* display: flex;/*! 以下3行设置垂直居中 要考虑元素高度
+    justify-content: center;
+    align-items: center;*/
 }
 main  kbd button{
     position: absolute;
@@ -30,4 +45,24 @@ main  kbd button{
 }
 kbd:hover > button{/*注意：hover用发法*/
     display: inline-block
+}
+kbd img{
+    width: 16px;
+    height: 16px;
+    position: absolute;left: 4px;bottom: 2px;
+}
+.key{
+    width: 65px;
+    height: 50px;
+  /*  display: inline-flex;/*以下3行为元素垂直居中
+    align-items: center;
+    justify-content: center;*/
+    color: #c5c5c5;
+    background: linear-gradient(to bottom,#292929 0%, #111 100%);
+    box-shadow: 0 0 0px 1px rgb(87, 87, 87), 0 0 0px 2px #1f2020 ,0 2px 0 2px #141414;
+}
+.text{
+    position: absolute;
+    left: 6px;
+    top: 2px;
 }

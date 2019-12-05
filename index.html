@@ -9,7 +9,7 @@
 </head>
 <body>
     <header></header>
-    <main id="ma">
+    <main id="ma" class="row">
     </main>
     <footer></footer>
     <script>
@@ -21,8 +21,35 @@
             }
             var hash = {
                 'q':'qq.com',
+                'w':'baidu.com',
+                'e':'ele.me',
+                'r':'qq.com',
+                't':'tencent.com',
+                'y':'yiche.com',
+                'q':'qzone.qq.com',
+                'u':'baidu.com',
+                'i':'ifinance.ifeng.com',
+                'q':'qiushibaike.com',
+                'o':'onlylady.com',
+                'p':'pconline.com.cn',
+                'q':'qq.com',
+                'a':'alibaba.com',
+                's':'sina.cn',
+                'q':'qq.com',
+                'd':'baidu.com',
+                'f':'ele.me',
+                'q':'qq.com',
+                'g':'google.cn',
+                'h':'hupu.com',
+                'j':'m.jd.com',
+                'l':'lol.qq.com',
+                'z':'zol.com',
+                'x':'xinnet.com',
+                'c':'caijing.com.cn',
+                'v':'vip.com',
                 'b':'baidu.com',
-                'e':'ele.me'
+                'n':'ele.me',
+                'm':'manmanbuy.com'
             }
             //取先前保留的hash
             hs=JSON.parse(localStorage.getItem('zz')||'null')
@@ -38,11 +65,23 @@
                 index2=0
                 while( index2 < row['length']){
                 kbdaa = document.createElement('kbd');
-                kbdaa.textContent =row[index2];//在kbdaa元素里生成keys下标对应的值
+                span=document.createElement('span');
+                span.textContent=row[index2]
+                span.className='text'
+                kbdaa.appendChild(span)
+                kbdaa.className='key'
+                //kbdaa.textContent =row[index2];//在kbdaa元素里生成keys下标对应的值
                 div1.appendChild(kbdaa)
                 buttona =document.createElement('button')
                 buttona.textContent ='编辑'
                 buttona.id=row[index2]
+                
+                imga=document.createElement('img')
+                if(hash[row[index2]]){
+                    imga.src='http://'+hash[row[index2]]+'/favicon.ico'
+                }else{
+                    imga.src='./icon1.jpg'
+                }
                 buttona.onclick =function(zc){
                     key =zc.target.id
                     //key = zc['target']['id'] zc的属性用法同上一句一样
@@ -51,6 +90,7 @@
                     localStorage.setItem('zz',JSON.stringify(hash))
 
                 }
+                kbdaa.appendChild(imga)
                 kbdaa.appendChild(buttona)
                 div1.appendChild(kbdaa)
                 index2 =index2 +1
